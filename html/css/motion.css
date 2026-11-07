@@ -17,3 +17,16 @@
     *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     .reveal { opacity: 1; transform: none; }
 }
+
+
+/* Slow, low-intensity motion accents. No rapid strobing. */
+@keyframes graphic-drift{from{transform:translate3d(-.45%,.18%,0) scale(1.015)}to{transform:translate3d(.5%,-.25%,0) scale(1.045)}}
+@keyframes beam-pass{0%,9%{opacity:0;transform:rotate(-28deg) translate3d(-160%,0,0)}18%{opacity:.85}53%{opacity:.26}65%,100%{opacity:0;transform:rotate(-28deg) translate3d(380%,0,0)}}
+@keyframes soft-flash-sweep{0%,58%{opacity:0;transform:rotate(21deg) translate3d(-180%,0,0)}64%{opacity:.34}72%{opacity:.12}82%,100%{opacity:0;transform:rotate(21deg) translate3d(760%,0,0)}}
+@keyframes fine-interference{0%,62%,100%{opacity:0;transform:translate3d(-2%,0,0)}65%{opacity:.55;transform:translate3d(0,-7px,0)}67%{opacity:.12;transform:translate3d(1%,2px,0)}70%{opacity:.42;transform:translate3d(0,0,0)}73%{opacity:0;transform:translate3d(2%,0,0)}}
+@keyframes title-glint{0%,46%{opacity:0;transform:skewX(-23deg) translateX(-250%)}52%{opacity:.72}61%{opacity:.12;transform:skewX(-23deg) translateX(900%)}100%{opacity:0;transform:skewX(-23deg) translateX(900%)}}
+@media(prefers-reduced-motion:reduce){
+ .scene__motion-graphic,.scene__beam,.scene__flash,.scene__glitch-slice,.intro__title::after{animation:none!important}
+ .scene__beam,.scene__flash,.scene__glitch-slice{display:none}
+ .scene__motion-graphic{transform:none}
+}

@@ -17,6 +17,14 @@
     <div class="screen" id="screen">
         <div class="scene" aria-hidden="true">
             <div class="scene__image"></div>
+            <img class="scene__motion-graphic" src="assets/images/era-motion-graphic.svg" alt="" aria-hidden="true">
+            <div class="scene__fx" aria-hidden="true">
+                <span class="scene__beam scene__beam--one"></span>
+                <span class="scene__beam scene__beam--two"></span>
+                <span class="scene__flash"></span>
+                <span class="scene__glitch-slice"></span>
+                <span class="scene__edge-light"></span>
+            </div>
             <div class="scene__shade"></div>
             <div class="scene__vignette"></div>
             <div class="scene__grain"></div>
@@ -65,12 +73,22 @@
                 <h1 class="intro__title reveal reveal--three" id="welcome-heading">
                     ERA<span class="intro__period">.</span>
                 </h1>
+                <div class="intro__meta reveal reveal--four">
+                    <span class="intro__meta-item"><i></i> COMPETITIVE PVP</span>
+                    <span class="intro__meta-divider">/</span>
+                    <span class="intro__meta-item">BUILT FOR THE BOLD</span>
+                    <span class="intro__meta-index">ERA SYSTEM 001</span>
+                </div>
                 <div class="intro__subline reveal reveal--four">
                     <span class="intro__subline-mark"></span>
                     <span>ENTER THE ARENA</span>
                     <span class="intro__subline-index">// 001</span>
                 </div>
 
+                <div class="intro__signal reveal reveal--five" aria-hidden="true">
+                    <span class="intro__signal-line"></span><span class="intro__signal-label">SIGNAL LOCKED</span>
+                    <span class="intro__signal-value">ERA // PVP</span><span class="intro__signal-line intro__signal-line--short"></span>
+                </div>
                 <div class="player-card reveal reveal--five">
                     <div class="player-card__icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24"><path d="M12 12a4.1 4.1 0 1 0 0-8.2 4.1 4.1 0 0 0 0 8.2Zm-7.2 8.1c.5-3.3 3.3-5.6 7.2-5.6s6.7 2.3 7.2 5.6H4.8Z" fill="currentColor"/></svg>
@@ -111,6 +129,14 @@
                 </div>
             </aside>
 
+            <div class="scene-hud scene-hud--top" aria-hidden="true">
+                <span class="scene-hud__index">E / 001</span><span class="scene-hud__rule"></span>
+                <span>COMBAT NETWORK // CONNECTING</span>
+            </div>
+            <div class="scene-hud scene-hud--side" aria-hidden="true">
+                <span class="scene-hud__side-label">ERA PVP</span><span class="scene-hud__side-line"></span>
+                <span class="scene-hud__side-index">SAN ANDREAS // 001</span>
+            </div>
             <div class="scene-caption" aria-hidden="true">
                 <span class="scene-caption__label">FIELD NOTES / 01</span>
                 <span class="scene-caption__rule"></span>

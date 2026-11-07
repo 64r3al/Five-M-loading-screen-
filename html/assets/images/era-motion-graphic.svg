@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" fill="none">
+<defs>
+ <linearGradient id="line" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#72D7FF" stop-opacity="0"/><stop offset=".48" stop-color="#72D7FF" stop-opacity=".78"/><stop offset="1" stop-color="#2F80FF" stop-opacity="0"/></linearGradient>
+ <linearGradient id="hot" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#2F80FF" stop-opacity="0"/><stop offset=".5" stop-color="#A7E8FF"/><stop offset="1" stop-color="#2F80FF" stop-opacity="0"/></linearGradient>
+ <radialGradient id="core"><stop stop-color="#55B8FF" stop-opacity=".22"/><stop offset=".6" stop-color="#236DCB" stop-opacity=".07"/><stop offset="1" stop-color="#236DCB" stop-opacity="0"/></radialGradient>
+ <filter id="soft" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<circle cx="1312" cy="517" r="430" fill="url(#core)"/>
+<g stroke="url(#line)" stroke-width="1">
+ <circle cx="1312" cy="517" r="360" stroke-dasharray="2 13" opacity=".64"/>
+ <circle cx="1312" cy="517" r="325" stroke-dasharray="95 18 7 18" opacity=".5"/>
+ <circle cx="1312" cy="517" r="286" stroke-dasharray="2 8" opacity=".48"/>
+ <path d="M1312 72V190M1312 844v164M867 517h118M1638 517h150"/>
+ <path d="M998 202 1080 284M1544 750l82 82M1627 202l-83 82M1080 750l-82 82" opacity=".45"/>
+ <path d="M1312 110v24m-12-12h24M1312 900v24m-12-12h24M905 517h24m-12-12v24M1695 517h24m-12-12v24" opacity=".8"/>
+</g>
+<g stroke="#69C9FF" stroke-width="1" opacity=".3">
+ <path d="M0 872 574 298M68 1080 870 278M420 1080 1225 275M1024 1080 1830 274" stroke-dasharray="2 18"/>
+ <path d="M0 930 470 460M0 1000 550 450M1300 0 1920 620M1480 0 1920 440"/>
+</g>
+<g stroke="url(#hot)" stroke-width="2" opacity=".5"><path d="M0 760 525 235M0 800 565 235"/><path d="M1380 1080 1920 540M1445 1080 1920 605"/></g>
+<g stroke="#79D7FF" stroke-width="1" opacity=".48">
+ <path d="M44 80h132m-132 9h64M44 80v62M1876 80h-132m132 9h-64m64-9v62"/>
+ <path d="M44 1000h132m-132-9h64m-64 9v-62M1876 1000h-132m132-9h-64m64 9v-62"/>
+ <path d="M109 180h56m-56 7h25M1750 180h56m-56 7h25M109 900h56m-56 7h25M1750 900h56m-56 7h25" opacity=".65"/>
+</g>
+<g fill="#9DE5FF"><circle cx="1312" cy="157" r="2.4" opacity=".8"/><circle cx="1672" cy="517" r="2" opacity=".8"/><circle cx="1312" cy="877" r="2.4" opacity=".7"/><circle cx="952" cy="517" r="2" opacity=".7"/><circle cx="1018" cy="224" r="2" opacity=".5"/><circle cx="1605" cy="794" r="1.6" opacity=".5"/></g>
+<g filter="url(#soft)" fill="#42A7FF" opacity=".48"><circle cx="1312" cy="157" r="5"/><circle cx="1672" cy="517" r="5"/><circle cx="1312" cy="877" r="5"/><circle cx="952" cy="517" r="5"/></g>
+<path d="M1020 517h584" stroke="url(#hot)" stroke-width="1" opacity=".25"/><path d="M1312 230v574" stroke="url(#hot)" stroke-width="1" opacity=".19"/>
+<path d="M1100 305 1160 365m244 304 60 60M1524 305l-60 60m-244 244-60 60" stroke="#A0E8FF" stroke-width="1" opacity=".3"/>
+<g fill="#A5D9FF" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="4" opacity=".35"><text x="1280" y="130">ERA // SIGNAL</text><text x="1280" y="920">COMBAT NETWORK</text></g>
+</svg>
