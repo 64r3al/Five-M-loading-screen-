@@ -1,0 +1,12 @@
+{
+  "name": "era-pvp-loading-screen",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Dependency-free ERA PVP FiveM loading screen",
+  "scripts": {
+    "check": "node --check html/js/config.js && node --check html/js/app.js && node scripts/validate.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,19 @@
+.reveal { opacity: 0; transform: translate3d(0, 16px, 0); animation: reveal-in .9s var(--ease-out) forwards; }
+.reveal--one { animation-delay: .12s; }
+.reveal--two { animation-delay: .22s; }
+.reveal--three { animation-delay: .32s; }
+.reveal--four { animation-delay: .48s; }
+.reveal--five { animation-delay: .62s; }
+.reveal--six { animation-delay: .72s; }
+
+@keyframes reveal-in { to { opacity: 1; transform: translate3d(0, 0, 0); } }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(101, 198, 255, .3), 0 0 12px rgba(101, 198, 255, .8); } 70% { box-shadow: 0 0 0 7px rgba(101, 198, 255, 0), 0 0 12px rgba(101, 198, 255, .8); } 100% { box-shadow: 0 0 0 0 rgba(101, 198, 255, 0), 0 0 12px rgba(101, 198, 255, .8); } }
+@keyframes scene-drift { from { transform: scale(1.02) translate3d(-.4%, .2%, 0); } to { transform: scale(1.08) translate3d(.5%, -.4%, 0); } }
+@keyframes light-float { from { transform: translate3d(-5%, -4%, 0) scale(.92); } to { transform: translate3d(8%, 7%, 0) scale(1.08); } }
+@keyframes progress-shine { 0%, 15% { left: -15%; opacity: 0; } 30% { opacity: .8; } 70%, 100% { left: 110%; opacity: 0; } }
+@keyframes visualizer-fallback { from { transform: scaleY(.24); } to { transform: scaleY(1.1); } }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    .reveal { opacity: 1; transform: none; }
+}

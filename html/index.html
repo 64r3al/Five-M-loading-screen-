@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#050b14">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="ERA PVP — Enter the arena.">
+    <title>ERA PVP — Enter the Arena</title>
+    <link rel="preload" href="assets/images/era-cityscape.svg" as="image" type="image/svg+xml">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/motion.css">
+</head>
+<body>
+    <div class="screen" id="screen">
+        <div class="scene" aria-hidden="true">
+            <div class="scene__image"></div>
+            <div class="scene__shade"></div>
+            <div class="scene__vignette"></div>
+            <div class="scene__grain"></div>
+            <div class="scene__scanline"></div>
+            <div class="scene__light scene__light--one"></div>
+            <div class="scene__light scene__light--two"></div>
+            <div class="scene__crosshair scene__crosshair--one"></div>
+            <div class="scene__crosshair scene__crosshair--two"></div>
+        </div>
+
+        <header class="topbar">
+            <a class="brand" href="#home" aria-label="ERA PVP home">
+                <span class="brand__mark" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" role="img">
+                        <path d="M8 6h32v7H16v7h20v7H16v8h24v7H8z" fill="currentColor" />
+                        <path d="M4 4v40M44 4v40" fill="none" stroke="currentColor" stroke-width="1" opacity=".34" />
+                    </svg>
+                </span>
+                <span class="brand__wordmark">
+                    <strong>ERA<span>.</span></strong>
+                    <small>PLAYER VS PLAYER</small>
+                </span>
+            </a>
+
+            <div class="topbar__center" aria-label="Server identity">
+                <span class="eyebrow-dot"></span>
+                <span>ERA NETWORK</span>
+                <span class="topbar__divider">/</span>
+                <span class="topbar__muted">COMPETITIVE PVP</span>
+            </div>
+
+            <div class="connection-pill" id="connection-pill">
+                <span class="connection-pill__pulse" aria-hidden="true"></span>
+                <span id="connection-label">ESTABLISHING LINK</span>
+            </div>
+        </header>
+
+        <main class="main" id="home">
+            <section class="intro" aria-labelledby="welcome-heading">
+                <div class="intro__kicker reveal reveal--one">
+                    <span class="kicker-line"></span>
+                    <span>YOUR NEXT MATCH STARTS HERE</span>
+                </div>
+
+                <p class="intro__welcome reveal reveal--two">WELCOME TO</p>
+                <h1 class="intro__title reveal reveal--three" id="welcome-heading">
+                    ERA<span class="intro__period">.</span>
+                </h1>
+                <div class="intro__subline reveal reveal--four">
+                    <span class="intro__subline-mark"></span>
+                    <span>ENTER THE ARENA</span>
+                    <span class="intro__subline-index">// 001</span>
+                </div>
+
+                <div class="player-card reveal reveal--five">
+                    <div class="player-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 12a4.1 4.1 0 1 0 0-8.2 4.1 4.1 0 0 0 0 8.2Zm-7.2 8.1c.5-3.3 3.3-5.6 7.2-5.6s6.7 2.3 7.2 5.6H4.8Z" fill="currentColor"/></svg>
+                    </div>
+                    <div class="player-card__copy">
+                        <span class="player-card__label">CONNECTING PLAYER</span>
+                        <strong id="player-name">PLAYER</strong>
+                    </div>
+                    <span class="player-card__status" aria-hidden="true">●</span>
+                </div>
+
+                <div class="intro__coordinates" aria-hidden="true">
+                    <span>34° 55' N</span>
+                    <i></i>
+                    <span>ERA // SAN ANDREAS</span>
+                </div>
+            </section>
+
+            <aside class="crew-panel reveal reveal--six" aria-labelledby="crew-heading">
+                <div class="panel-heading">
+                    <div>
+                        <span class="section-index">01 / THE PEOPLE</span>
+                        <h2 id="crew-heading">BEHIND ERA</h2>
+                    </div>
+                    <span class="panel-heading__glyph" aria-hidden="true">✳</span>
+                </div>
+                <p class="crew-panel__intro">THE TEAM BUILDING THE ARENA.</p>
+                <div class="crew-list" id="crew-list" aria-live="polite">
+                    <article class="crew-card crew-card--placeholder">
+                        <div class="crew-card__avatar">ER</div>
+                        <div class="crew-card__info"><span>OWNER</span><strong>NAME TO BE ADDED</strong></div>
+                        <span class="crew-card__arrow" aria-hidden="true">↗</span>
+                    </article>
+                </div>
+                <div class="crew-panel__footer">
+                    <span class="crew-panel__line"></span>
+                    <span>BUILT BY THE COMMUNITY</span>
+                </div>
+            </aside>
+
+            <div class="scene-caption" aria-hidden="true">
+                <span class="scene-caption__label">FIELD NOTES / 01</span>
+                <span class="scene-caption__rule"></span>
+                <span>NO SHORTCUTS. JUST SKILL.</span>
+            </div>
+        </main>
+
+        <footer class="bottom-area">
+            <div class="bottom-area__topline">
+                <span class="section-index">02 / CONNECTION SEQUENCE</span>
+                <span class="loading-state" id="loading-state">WAITING FOR FIVE M PROGRESS</span>
+            </div>
+
+            <section class="loading-panel" aria-label="Loading progress">
+                <div class="loading-panel__meta">
+                    <div class="loading-panel__status">
+                        <span class="loading-panel__pulse" aria-hidden="true"></span>
+                        <span id="loading-message">INITIALIZING YOUR SESSION</span>
+                    </div>
+                    <strong class="loading-panel__percent" id="loading-percent">0<span>%</span></strong>
+                </div>
+                <div class="progress-track" role="progressbar" aria-label="FiveM loading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track">
+                    <div class="progress-track__fill" id="progress-fill"></div>
+                    <div class="progress-track__shine" aria-hidden="true"></div>
+                </div>
+                <div class="loading-panel__bottom">
+                    <span id="loading-subtext">PREPARING THE BATTLEFIELD</span>
+                    <span class="loading-tip"><strong>ERA TIP</strong><span id="loading-tip">PLAY SMART. PLAY FAIR.</span></span>
+                    <span class="loading-panel__right"><i></i> ERA SECURE SESSION</span>
+                </div>
+            </section>
+
+            <div class="footer-row">
+                <section class="music-player" aria-label="Music player">
+                    <div class="music-player__cover" aria-hidden="true">
+                        <span>ERA</span>
+                        <i></i>
+                    </div>
+                    <div class="music-player__track">
+                        <span class="music-player__eyebrow">NOW PLAYING</span>
+                        <strong id="track-title">ERA ORIGINAL SOUNDTRACK</strong>
+                        <span class="music-player__artist" id="track-artist">ADD YOUR MUSIC IN CONFIG</span>
+                    </div>
+                    <div class="visualizer" id="visualizer" aria-hidden="true">
+                        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                    <button class="icon-button" id="play-button" type="button" aria-label="Play music" title="Play music">
+                        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z" fill="currentColor"/></svg>
+                        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm7 0h4v14h-4z" fill="currentColor"/></svg>
+                    </button>
+                    <div class="volume-control">
+                        <button class="volume-control__button" id="mute-button" type="button" aria-label="Mute music" title="Mute music">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.5-.5a5 5 0 0 1 0 7m2.5-9.5a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <input id="volume-slider" type="range" min="0" max="100" value="35" aria-label="Music volume">
+                    </div>
+                    <span class="music-player__status" id="audio-status">OFFLINE</span>
+                </section>
+
+                <div class="footer-links">
+                    <a class="footer-link" id="discord-link" href="#community" aria-disabled="true">
+                        <span class="footer-link__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M19.7 6.1a17 17 0 0 0-4.2-1.3l-.5 1.1a15.4 15.4 0 0 0-6 0l-.5-1.1a17 17 0 0 0-4.2 1.3C1.7 10 1 13.8 1.4 17.5a17 17 0 0 0 5.2 2.6l1.1-1.8-1.7-.8.4-.3a12.2 12.2 0 0 0 11.2 0l.4.3-1.7.8 1.1 1.8a17 17 0 0 0 5.2-2.6c.5-4.3-.8-8-3.6-11.4ZM8.7 14.9c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z" fill="currentColor"/></svg>
+                        </span>
+                        <span>DISCORD</span>
+                        <span class="footer-link__arrow">↗</span>
+                    </a>
+                    <div class="footer-signature"><span>ERA</span> NETWORK <i></i> EST. MMXXIV</div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="preview-badge" id="preview-badge" hidden>LOCAL DESIGN PREVIEW</div>
+        <div class="sr-only" id="announcer" aria-live="polite" aria-atomic="true"></div>
+    </div>
+
+    <audio id="background-audio" preload="none" loop></audio>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
