@@ -30,3 +30,60 @@
  .scene__beam,.scene__flash,.scene__glitch-slice{display:none}
  .scene__motion-graphic{transform:none}
 }
+
+
+/* 9.6-second loop: fragments converge, the extruded mark holds, then breaks apart. */
+@keyframes era-core-cycle {
+    0%, 5% { opacity: 0; transform: rotateX(25deg) rotateY(-24deg) scale(.72) translateZ(-80px); filter: blur(9px); }
+    14%, 58% { opacity: 1; transform: rotateX(0deg) rotateY(0deg) scale(1) translateZ(0); filter: blur(0); }
+    68% { opacity: .96; transform: rotateX(-5deg) rotateY(12deg) scale(1.04) translateZ(20px); filter: blur(1px); }
+    82%, 100% { opacity: 0; transform: rotateX(-24deg) rotateY(34deg) scale(.68) translateZ(-105px); filter: blur(11px); }
+}
+@keyframes era-letter-cycle {
+    0%, 3% { opacity: 0; transform: translate3d(var(--scatter-x), var(--scatter-y), -100px) rotateY(var(--scatter-r)) rotateX(30deg) scale(.72); filter: blur(10px); }
+    15%, 56% { opacity: 1; transform: translate3d(0,0,22px) rotateY(0) rotateX(0) scale(1); filter: blur(0); }
+    66% { opacity: 1; transform: translate3d(0,-4px,35px) rotateY(-5deg) rotateX(-3deg) scale(1.04); filter: blur(.3px); }
+    79%, 88% { opacity: 0; transform: translate3d(calc(var(--scatter-x) * 1.7), calc(var(--scatter-y) * -1.3), -130px) rotateY(calc(var(--scatter-r) * -1.4)) rotateX(-42deg) scale(.7); filter: blur(9px); }
+    100% { opacity: 0; transform: translate3d(var(--scatter-x), var(--scatter-y), -100px) rotateY(var(--scatter-r)) rotateX(30deg) scale(.72); filter: blur(10px); }
+}
+@keyframes era-caption-cycle {
+    0%, 10% { opacity: 0; transform: translateY(9px); filter: blur(4px); }
+    18%, 58% { opacity: 1; transform: translateY(0); filter: blur(0); }
+    70%, 84% { opacity: 0; transform: translateY(-7px); filter: blur(4px); }
+    100% { opacity: 0; transform: translateY(9px); filter: blur(4px); }
+}
+@keyframes era-orbit-outer-cycle {
+    0%, 4% { opacity: 0; transform: translate(-50%,-50%) perspective(900px) rotateX(78deg) rotateZ(-64deg) scale(.55); }
+    18% { opacity: .72; transform: translate(-50%,-50%) perspective(900px) rotateX(66deg) rotateZ(-15deg) scale(1); }
+    58% { opacity: .55; transform: translate(-50%,-50%) perspective(900px) rotateX(66deg) rotateZ(48deg) scale(1.04); }
+    78%, 100% { opacity: 0; transform: translate(-50%,-50%) perspective(900px) rotateX(78deg) rotateZ(142deg) scale(1.22); }
+}
+@keyframes era-orbit-inner-cycle {
+    0%, 10% { opacity: 0; transform: translate(-50%,-50%) perspective(900px) rotateX(60deg) rotateZ(90deg) scale(.6); }
+    21% { opacity: .56; transform: translate(-50%,-50%) perspective(900px) rotateX(60deg) rotateZ(28deg) scale(1); }
+    55% { opacity: .38; transform: translate(-50%,-50%) perspective(900px) rotateX(60deg) rotateZ(-34deg) scale(1.02); }
+    77%, 100% { opacity: 0; transform: translate(-50%,-50%) perspective(900px) rotateX(70deg) rotateZ(-120deg) scale(1.2); }
+}
+@keyframes era-shard-cycle {
+    0%, 4% { opacity: 0; transform: translate3d(var(--sx),var(--sy),-110px) rotate(var(--sr)) scale(.35); }
+    14%, 23% { opacity: .8; transform: translate3d(0,0,45px) rotate(0) scale(1); }
+    32%, 56% { opacity: .14; transform: translate3d(0,0,15px) rotate(12deg) scale(.7); }
+    70%, 82% { opacity: .75; transform: translate3d(var(--sx),var(--sy),-120px) rotate(var(--sr)) scale(.5); }
+    88%, 100% { opacity: 0; transform: translate3d(calc(var(--sx) * 1.3),calc(var(--sy) * 1.3),-160px) rotate(calc(var(--sr) * 1.7)) scale(.15); }
+}
+@keyframes era-glint-cycle {
+    0%, 22% { opacity: 0; transform: skewX(-22deg) translateX(-450%); }
+    30% { opacity: .72; }
+    45% { opacity: 0; transform: skewX(-22deg) translateX(900%); }
+    100% { opacity: 0; transform: skewX(-22deg) translateX(900%); }
+}
+@keyframes era-axis-cycle {
+    0%, 8%, 100% { opacity: 0; transform: translate(-50%,-50%) scale(.35); }
+    22%, 48% { opacity: .5; transform: translate(-50%,-50%) scale(1); }
+    72%, 84% { opacity: 0; transform: translate(-50%,-50%) scale(1.18); }
+}
+@keyframes era-aura-cycle {
+    0%, 5%, 100% { opacity: 0; transform: scale(.6); }
+    18%, 56% { opacity: 1; transform: scale(1); }
+    78%, 88% { opacity: 0; transform: scale(1.28); }
+}

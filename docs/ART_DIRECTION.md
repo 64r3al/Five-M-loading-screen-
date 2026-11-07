@@ -41,3 +41,10 @@ Before enabling the cinematic in production, compare its decode cost with the cu
 - Final server Discord invitation.
 - Final soundtrack file and display metadata.
 - Server-approved taglines and tips.
+
+
+## 0.3.0 — central 3D ERA / PVP identity loop
+
+A center-weighted 3D-style wordmark now cycles independently from the player interface. The letters enter from separated positions with perspective rotation and blur, assemble into a metallic extruded ERA mark, reveal the PVP subtitle and orbiting rings, catch a light sweep, then separate and fade away. The complete sequence repeats every 9.6 seconds.
+
+The logo is built as a lightweight HTML/CSS 3D composition rather than a real-time WebGL scene or a large video. It stays in the non-interactive scene layer behind the interface. A reduced-motion preference freezes the wordmark in a readable state and hides moving fragments.

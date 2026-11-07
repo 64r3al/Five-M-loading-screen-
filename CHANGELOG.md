@@ -16,3 +16,11 @@
 - Expanded handling for documented FiveM initialization and log-line messages.
 - Restricted simulated progress to explicit local browser preview contexts; unknown/NUI contexts never receive fabricated progress.
 - Added reduced-motion behavior for the new graphic layer.
+
+
+## 0.3.0 — Central 3D ERA reveal loop
+
+- Added a central ERA / PVP 3D-style logo sequence with CSS perspective, layered extrusion, independently animated letters and orbital rings.
+- Logo reveal assembles from separated shards, holds with a metallic light pass, then unravels and fades in a continuous 9.6-second loop.
+- Kept the centerpiece decorative and behind the loading interface so it cannot intercept the mouse or obscure the actual progress controls.
+- Added responsive sizing and a static, readable reduced-motion fallback.

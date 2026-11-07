@@ -271,3 +271,244 @@
 @media(max-width:1100px){.scene-hud--top{left:48%}.scene-hud--side{display:none}}
 @media(max-width:760px){.scene-hud{display:none}.intro::after{right:-20%;opacity:.5}.intro__meta{flex-wrap:wrap;gap:8px}.intro__meta-index{margin-left:0}.intro__signal{display:none}}
 @media(max-height:720px) and (min-width:761px){.intro__meta{margin-top:13px}.intro__signal{margin-top:10px}}
+
+
+/* ─────────────────────────────────────────────────────────────
+   ERA PVP central 3D reveal — layered chrome, orbit and depth.
+   Kept in the scene layer so it never blocks controls or progress.
+   ───────────────────────────────────────────────────────────── */
+.era-reveal {
+    position: absolute;
+    z-index: 4;
+    top: 47%;
+    left: 59%;
+    width: clamp(300px, 27vw, 510px);
+    aspect-ratio: 1.42;
+    transform: translate(-50%, -50%);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    pointer-events: none;
+    isolation: isolate;
+}
+.era-reveal::before {
+    content: "";
+    position: absolute;
+    inset: 17% 18%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(31, 116, 213, .2), rgba(31, 116, 213, .05) 43%, transparent 72%);
+    filter: blur(20px);
+    animation: era-aura-cycle 9.6s ease-in-out infinite;
+}
+.era-reveal__core {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    animation: era-core-cycle 9.6s cubic-bezier(.2,.7,.2,1) infinite;
+}
+.era-reveal__word {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .015em;
+    padding: 0 .08em .08em;
+    color: #f1f8ff;
+    font-family: var(--font-display);
+    font-size: clamp(78px, 9.3vw, 164px);
+    font-weight: 900;
+    line-height: .8;
+    letter-spacing: -.055em;
+    transform: rotateX(13deg) rotateY(-13deg) translateZ(32px);
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 15px 24px rgba(0, 0, 0, .6));
+}
+.era-reveal__word::before {
+    content: attr(data-label);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    color: rgba(26, 91, 166, .7);
+    transform: translate3d(0, 11px, -16px);
+    text-shadow: 0 2px 0 #174b83, 0 4px 0 #133d6e, 0 6px 0 #0e315a, 0 8px 0 #0a2443, 0 10px 0 #07182d;
+    opacity: .85;
+}
+.era-reveal__letter {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    background: linear-gradient(180deg, #ffffff 0%, #d8ecff 31%, #8bbff0 68%, #e6f6ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 1px 0 rgba(255,255,255,.2);
+    transform-style: preserve-3d;
+    will-change: transform, opacity, filter;
+}
+.era-reveal__letter--e {
+    --scatter-x: -74px;
+    --scatter-y: 35px;
+    --scatter-r: -42deg;
+    animation: era-letter-cycle 9.6s .02s cubic-bezier(.18,.76,.25,1) infinite;
+}
+.era-reveal__letter--r {
+    --scatter-x: 0px;
+    --scatter-y: -52px;
+    --scatter-r: 38deg;
+    animation: era-letter-cycle 9.6s .13s cubic-bezier(.18,.76,.25,1) infinite;
+}
+.era-reveal__letter--a {
+    --scatter-x: 78px;
+    --scatter-y: 31px;
+    --scatter-r: 49deg;
+    animation: era-letter-cycle 9.6s .25s cubic-bezier(.18,.76,.25,1) infinite;
+}
+.era-reveal__subtitle {
+    margin-top: 13px;
+    padding-left: .42em;
+    color: var(--cyan-300);
+    font-size: clamp(11px, 1.15vw, 17px);
+    font-weight: 900;
+    letter-spacing: .46em;
+    text-shadow: 0 0 17px rgba(87, 184, 255, .78), 0 0 36px rgba(47, 128, 255, .3);
+    animation: era-caption-cycle 9.6s .16s ease-in-out infinite;
+}
+.era-reveal__tagline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    color: rgba(202, 225, 247, .72);
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: .25em;
+    white-space: nowrap;
+    animation: era-caption-cycle 9.6s .22s ease-in-out infinite;
+}
+.era-reveal__tagline span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--blue-400));
+}
+.era-reveal__tagline span:last-child { transform: rotate(180deg); }
+.era-reveal__orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(100, 195, 255, .4);
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    pointer-events: none;
+}
+.era-reveal__orbit--outer {
+    width: 82%;
+    height: 68%;
+    border-style: dashed;
+    border-color: rgba(88, 179, 255, .37);
+    box-shadow: 0 0 20px rgba(47, 128, 255, .1), inset 0 0 18px rgba(47, 128, 255, .06);
+    animation: era-orbit-outer-cycle 9.6s ease-in-out infinite;
+}
+.era-reveal__orbit--inner {
+    width: 68%;
+    height: 52%;
+    border-color: rgba(163, 225, 255, .24);
+    border-left-color: rgba(92, 176, 255, .8);
+    border-right-color: transparent;
+    animation: era-orbit-inner-cycle 9.6s ease-in-out infinite;
+}
+.era-reveal__orbit-tick {
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 13px;
+    background: linear-gradient(transparent, var(--cyan-300));
+    box-shadow: 0 0 8px rgba(125, 216, 255, .8);
+}
+.era-reveal__orbit-tick--top { top: -7px; }
+.era-reveal__orbit-tick--bottom { bottom: -7px; transform: rotate(180deg); }
+.era-reveal__axis {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(90deg, transparent, rgba(125, 216, 255, .48), transparent);
+    opacity: 0;
+}
+.era-reveal__axis--horizontal { width: 100%; height: 1px; animation: era-axis-cycle 9.6s 1s ease-in-out infinite; }
+.era-reveal__axis--vertical { width: 1px; height: 88%; background: linear-gradient(180deg, transparent, rgba(125, 216, 255, .34), transparent); animation: era-axis-cycle 9.6s 1.2s ease-in-out infinite; }
+.era-reveal__shard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 35px;
+    border: 1px solid rgba(133, 212, 255, .72);
+    background: linear-gradient(145deg, rgba(112, 196, 255, .3), rgba(12, 46, 84, .04));
+    box-shadow: 0 0 15px rgba(47, 128, 255, .25);
+    opacity: 0;
+    transform-style: preserve-3d;
+}
+.era-reveal__shard--one { --sx: -185px; --sy: -76px; --sr: -54deg; animation: era-shard-cycle 9.6s .08s ease-in-out infinite; }
+.era-reveal__shard--two { --sx: 177px; --sy: -81px; --sr: 63deg; animation: era-shard-cycle 9.6s .18s ease-in-out infinite; }
+.era-reveal__shard--three { --sx: -158px; --sy: 91px; --sr: 43deg; animation: era-shard-cycle 9.6s .3s ease-in-out infinite; }
+.era-reveal__shard--four { --sx: 171px; --sy: 88px; --sr: -68deg; animation: era-shard-cycle 9.6s .4s ease-in-out infinite; }
+.era-reveal__glint {
+    position: absolute;
+    top: 8%;
+    bottom: 8%;
+    left: 12%;
+    width: 13%;
+    background: linear-gradient(90deg, transparent, rgba(219, 247, 255, .65), rgba(82, 171, 255, .1), transparent);
+    filter: blur(6px);
+    opacity: 0;
+    transform: skewX(-22deg) translateX(-450%);
+    animation: era-glint-cycle 9.6s 1.25s ease-in-out infinite;
+}
+.era-reveal__caption {
+    position: absolute;
+    bottom: 8%;
+    color: rgba(132, 186, 231, .45);
+    font-size: 6px;
+    font-weight: 900;
+    letter-spacing: .2em;
+    opacity: 0;
+    animation: era-caption-cycle 9.6s .34s ease-in-out infinite;
+}
+.era-reveal__caption--left { left: 7%; }
+.era-reveal__caption--right { right: 7%; }
+@media (max-width: 1100px) {
+    .era-reveal { left: 61%; width: clamp(260px, 30vw, 360px); opacity: .72; }
+    .era-reveal__word { font-size: clamp(76px, 10vw, 120px); }
+    .era-reveal__shard--one { --sx: -130px; }
+    .era-reveal__shard--two { --sx: 130px; }
+    .era-reveal__shard--three { --sx: -118px; }
+    .era-reveal__shard--four { --sx: 118px; }
+}
+@media (max-width: 760px) {
+    .era-reveal { top: 51%; left: 57%; width: 250px; opacity: .38; }
+    .era-reveal__word { font-size: 82px; }
+    .era-reveal__caption { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .era-reveal::before,
+    .era-reveal__core,
+    .era-reveal__letter,
+    .era-reveal__subtitle,
+    .era-reveal__tagline,
+    .era-reveal__orbit,
+    .era-reveal__axis,
+    .era-reveal__shard,
+    .era-reveal__glint,
+    .era-reveal__caption {
+        animation: none !important;
+    }
+    .era-reveal__core { opacity: .66; }
+    .era-reveal__letter { opacity: 1; transform: none; filter: none; }
+    .era-reveal__orbit--outer,
+    .era-reveal__orbit--inner { opacity: .35; transform: translate(-50%, -50%) rotateX(62deg); }
+    .era-reveal__shard,
+    .era-reveal__axis,
+    .era-reveal__glint { display: none; }
+}

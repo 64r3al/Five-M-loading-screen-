@@ -9,6 +9,7 @@ A custom, dark-blue cinematic loading screen for the ERA PVP FiveM server. The f
 - ERA-branded, dark navy / electric-blue PVP interface.
 - Original vector city-at-night backdrop with an independent animated motion-graphics overlay.
 - Orbital HUD linework, diagonal light beams, a slow blue-white flash sweep and rare low-intensity signal interference.
+- A central 3D-styled ERA / PVP logo loop: letters assemble from separated fragments, hold with metallic depth and orbiting rings, then scatter and fade before repeating.
 - Connecting player's name from FiveM handover data.
 - Real FiveM loadProgress event handling (0–100%; no fabricated live progress).
 - Founder/staff cards configured in one file, with safe text rendering and avatar fallbacks.
