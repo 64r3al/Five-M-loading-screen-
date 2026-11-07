@@ -7,3 +7,12 @@
 - Added real FiveM loading-progress event handling with a browser-only labelled preview.
 - Added configurable crew cards and a local soundtrack player with graceful missing-asset states.
 - Added installation, configuration, art-direction and QA documentation.
+
+
+## 0.2.0 — Motion-graphics visual pass
+
+- Added an original animated tactical HUD overlay with orbital linework, diagonal energy beams and a restrained low-frequency flash/interference accent.
+- Enhanced the ERA title treatment, team panel layering and progress bar finish.
+- Expanded handling for documented FiveM initialization and log-line messages.
+- Restricted simulated progress to explicit local browser preview contexts; unknown/NUI contexts never receive fabricated progress.
+- Added reduced-motion behavior for the new graphic layer.

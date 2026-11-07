@@ -34,7 +34,9 @@
         discordLink: byId('discord-link'),
     };
 
-    const isFiveM = typeof window.GetParentResourceName === 'function' || Object.prototype.hasOwnProperty.call(window, 'nuiHandoverData');
+    // Only run demo progress on an explicitly local browser preview. Never fabricate progress in unknown/NUI contexts.
+    const isLocalPreview = window.location.protocol === 'file:' ||
+        ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
     const state = {
         progress: 0,
         hasReceivedProgress: false,
@@ -330,6 +332,23 @@
             case 'endInitFunction':
                 setStage('FINALIZING CONNECTION', 'WAITING FOR GAME HANDOFF');
                 break;
+            case 'startInitFunctionOrder':
+                setStage('PREPARING GAME SYSTEMS', 'SETTING UP YOUR SESSION');
+                break;
+            case 'initFunctionInvoking':
+                if (typeof data.name === 'string' && data.name.trim()) {
+                    setStage(`INITIALIZING ${data.name.trim().slice(0, 42).toUpperCase()}`, 'SETTING UP YOUR SESSION');
+                }
+                break;
+            case 'initFunctionInvoked':
+                setStage('GAME SYSTEM INITIALIZED', 'PREPARING THE NEXT STAGE');
+                break;
+            case 'onLogLine':
+                if (typeof data.message === 'string' && data.message.trim()) {
+                    const line = data.message.replace(/\\s+/g, ' ').trim().slice(0, 72);
+                    setStage(line.toUpperCase(), 'FIVE M CONNECTION UPDATE');
+                }
+                break;
             default:
                 break;
         }
@@ -383,7 +402,7 @@
         startTipRotation();
         window.addEventListener('message', handleFiveMMessage);
 
-        if (!isFiveM) startBrowserPreview();
+        if (isLocalPreview) startBrowserPreview();
 
         window.addEventListener('pagehide', () => {
             if (state.animationFrame) cancelAnimationFrame(state.animationFrame);
