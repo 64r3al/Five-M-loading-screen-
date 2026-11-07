@@ -351,18 +351,27 @@
     --scatter-x: -74px;
     --scatter-y: 35px;
     --scatter-r: -42deg;
+    --scatter-out-x: -126px;
+    --scatter-out-y: -45px;
+    --scatter-out-r: -65deg;
     animation: era-letter-cycle 9.6s .02s cubic-bezier(.18,.76,.25,1) infinite;
 }
 .era-reveal__letter--r {
     --scatter-x: 0px;
     --scatter-y: -52px;
     --scatter-r: 38deg;
+    --scatter-out-x: 0px;
+    --scatter-out-y: -115px;
+    --scatter-out-r: 82deg;
     animation: era-letter-cycle 9.6s .13s cubic-bezier(.18,.76,.25,1) infinite;
 }
 .era-reveal__letter--a {
     --scatter-x: 78px;
     --scatter-y: 31px;
     --scatter-r: 49deg;
+    --scatter-out-x: 133px;
+    --scatter-out-y: -40px;
+    --scatter-out-r: 75deg;
     animation: era-letter-cycle 9.6s .25s cubic-bezier(.18,.76,.25,1) infinite;
 }
 .era-reveal__subtitle {
@@ -450,10 +459,10 @@
     opacity: 0;
     transform-style: preserve-3d;
 }
-.era-reveal__shard--one { --sx: -185px; --sy: -76px; --sr: -54deg; animation: era-shard-cycle 9.6s .08s ease-in-out infinite; }
-.era-reveal__shard--two { --sx: 177px; --sy: -81px; --sr: 63deg; animation: era-shard-cycle 9.6s .18s ease-in-out infinite; }
-.era-reveal__shard--three { --sx: -158px; --sy: 91px; --sr: 43deg; animation: era-shard-cycle 9.6s .3s ease-in-out infinite; }
-.era-reveal__shard--four { --sx: 171px; --sy: 88px; --sr: -68deg; animation: era-shard-cycle 9.6s .4s ease-in-out infinite; }
+.era-reveal__shard--one { --sx: -185px; --sy: -76px; --sr: -54deg; --sx-out: -241px; --sy-out: -99px; --sr-out: -78deg; animation: era-shard-cycle 9.6s .08s ease-in-out infinite; }
+.era-reveal__shard--two { --sx: 177px; --sy: -81px; --sr: 63deg; --sx-out: 230px; --sy-out: -105px; --sr-out: 90deg; animation: era-shard-cycle 9.6s .18s ease-in-out infinite; }
+.era-reveal__shard--three { --sx: -158px; --sy: 91px; --sr: 43deg; --sx-out: -205px; --sy-out: 118px; --sr-out: 60deg; animation: era-shard-cycle 9.6s .3s ease-in-out infinite; }
+.era-reveal__shard--four { --sx: 171px; --sy: 88px; --sr: -68deg; --sx-out: 222px; --sy-out: 114px; --sr-out: -95deg; animation: era-shard-cycle 9.6s .4s ease-in-out infinite; }
 .era-reveal__glint {
     position: absolute;
     top: 8%;
@@ -481,10 +490,10 @@
 @media (max-width: 1100px) {
     .era-reveal { left: 61%; width: clamp(260px, 30vw, 360px); opacity: .72; }
     .era-reveal__word { font-size: clamp(76px, 10vw, 120px); }
-    .era-reveal__shard--one { --sx: -130px; }
-    .era-reveal__shard--two { --sx: 130px; }
-    .era-reveal__shard--three { --sx: -118px; }
-    .era-reveal__shard--four { --sx: 118px; }
+    .era-reveal__shard--one { --sx: -130px; --sx-out: -169px; }
+    .era-reveal__shard--two { --sx: 130px; --sx-out: 169px; }
+    .era-reveal__shard--three { --sx: -118px; --sx-out: -153px; }
+    .era-reveal__shard--four { --sx: 118px; --sx-out: 153px; }
 }
 @media (max-width: 760px) {
     .era-reveal { top: 51%; left: 57%; width: 250px; opacity: .38; }
