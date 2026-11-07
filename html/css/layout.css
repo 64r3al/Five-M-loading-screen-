@@ -310,69 +310,80 @@
     animation: era-core-cycle 9.6s cubic-bezier(.2,.7,.2,1) infinite;
 }
 .era-reveal__word {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .015em;
-    padding: 0 .08em .08em;
-    color: #f1f8ff;
-    font-family: var(--font-display);
-    font-size: clamp(78px, 9.3vw, 164px);
-    font-weight: 900;
-    line-height: .8;
-    letter-spacing: -.055em;
-    transform: rotateX(13deg) rotateY(-13deg) translateZ(32px);
+    display: block;
+    width: clamp(300px, 35vw, 570px);
+    height: auto;
+    overflow: visible;
+    transform: rotateX(11deg) rotateY(-9deg) translateZ(36px);
     transform-style: preserve-3d;
-    filter: drop-shadow(0 15px 24px rgba(0, 0, 0, .6));
+    filter: drop-shadow(0 18px 22px rgba(0, 0, 0, .62)) drop-shadow(0 0 24px rgba(47, 128, 255, .2));
 }
-.era-reveal__word::before {
-    content: attr(data-label);
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    color: rgba(26, 91, 166, .7);
-    transform: translate3d(0, 11px, -16px);
-    text-shadow: 0 2px 0 #174b83, 0 4px 0 #133d6e, 0 6px 0 #0e315a, 0 8px 0 #0a2443, 0 10px 0 #07182d;
-    opacity: .85;
-}
-.era-reveal__letter {
-    position: relative;
-    display: inline-block;
-    color: transparent;
-    background: linear-gradient(180deg, #ffffff 0%, #d8ecff 31%, #8bbff0 68%, #e6f6ff 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    text-shadow: 0 1px 0 rgba(255,255,255,.2);
+.era-reveal__svg-letter {
+    transform-box: fill-box;
+    transform-origin: center;
     transform-style: preserve-3d;
+    opacity: 0;
     will-change: transform, opacity, filter;
 }
-.era-reveal__letter--e {
-    --scatter-x: -74px;
-    --scatter-y: 35px;
-    --scatter-r: -42deg;
-    --scatter-out-x: -126px;
-    --scatter-out-y: -45px;
-    --scatter-out-r: -65deg;
-    animation: era-letter-cycle 9.6s .02s cubic-bezier(.18,.76,.25,1) infinite;
+.era-reveal__extrusion {
+    fill: url(#era-metal-depth);
+    stroke: #0a2442;
+    stroke-width: 1.5;
+    stroke-linejoin: bevel;
 }
-.era-reveal__letter--r {
-    --scatter-x: 0px;
-    --scatter-y: -52px;
-    --scatter-r: 38deg;
-    --scatter-out-x: 0px;
-    --scatter-out-y: -115px;
-    --scatter-out-r: 82deg;
-    animation: era-letter-cycle 9.6s .13s cubic-bezier(.18,.76,.25,1) infinite;
+.era-reveal__face {
+    fill: url(#era-metal-face);
+    stroke: rgba(240, 249, 255, .86);
+    stroke-width: 1.4;
+    stroke-linejoin: bevel;
 }
-.era-reveal__letter--a {
-    --scatter-x: 78px;
-    --scatter-y: 31px;
-    --scatter-r: 49deg;
-    --scatter-out-x: 133px;
-    --scatter-out-y: -40px;
-    --scatter-out-r: 75deg;
-    animation: era-letter-cycle 9.6s .25s cubic-bezier(.18,.76,.25,1) infinite;
+.era-reveal__highlight {
+    fill: none;
+    stroke: rgba(255, 255, 255, .6);
+    stroke-width: 2;
+    stroke-linecap: square;
+    stroke-linejoin: bevel;
+    vector-effect: non-scaling-stroke;
+    opacity: .62;
+}
+.era-reveal__svg-letter--e {
+    --entry-x: -168px;
+    --entry-y: 42px;
+    --entry-near-x: -34px;
+    --entry-near-y: 8px;
+    --entry-rotate: -76deg;
+    --exit-x: -182px;
+    --exit-y: -62px;
+    --exit-near-x: -51px;
+    --exit-near-y: -15px;
+    --exit-rotate: -92deg;
+    animation: era-letter-forge 10.8s .02s cubic-bezier(.16,.78,.2,1) infinite;
+}
+.era-reveal__svg-letter--r {
+    --entry-x: 0px;
+    --entry-y: -112px;
+    --entry-near-x: 0px;
+    --entry-near-y: -22px;
+    --entry-rotate: 72deg;
+    --exit-x: 4px;
+    --exit-y: -142px;
+    --exit-near-x: 1px;
+    --exit-near-y: -34px;
+    --exit-rotate: 94deg;
+    animation: era-letter-forge 10.8s .13s cubic-bezier(.16,.78,.2,1) infinite;
+}
+.era-reveal__svg-letter--a {
+    --entry-x: 170px;
+    --entry-y: 48px;
+    --entry-near-x: 34px;
+    --entry-near-y: 10px;
+    --entry-rotate: 82deg;
+    --exit-x: 188px;
+    --exit-y: -58px;
+    --exit-near-x: 53px;
+    --exit-near-y: -14px;
+    --exit-rotate: 105deg;
+    animation: era-letter-forge 10.8s .24s cubic-bezier(.16,.78,.2,1) infinite;
 }
 .era-reveal__subtitle {
     margin-top: 13px;
@@ -463,6 +474,24 @@
 .era-reveal__shard--two { --sx: 177px; --sy: -81px; --sr: 63deg; --sx-out: 230px; --sy-out: -105px; --sr-out: 90deg; animation: era-shard-cycle 9.6s .18s ease-in-out infinite; }
 .era-reveal__shard--three { --sx: -158px; --sy: 91px; --sr: 43deg; --sx-out: -205px; --sy-out: 118px; --sr-out: 60deg; animation: era-shard-cycle 9.6s .3s ease-in-out infinite; }
 .era-reveal__shard--four { --sx: 171px; --sy: 88px; --sr: -68deg; --sx-out: 222px; --sy-out: 114px; --sr-out: -95deg; animation: era-shard-cycle 9.6s .4s ease-in-out infinite; }
+.era-reveal__particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #d8f5ff;
+    box-shadow: 0 0 8px 2px rgba(101, 198, 255, .8), 0 0 21px rgba(47, 128, 255, .58);
+    opacity: 0;
+    animation: era-particle-cycle 10.8s var(--particle-delay, 0s) ease-in-out infinite;
+}
+.era-reveal__particle--one { --particle-x: -202px; --particle-y: -78px; --particle-near-x: -166px; --particle-near-y: -64px; --particle-out-x: -264px; --particle-out-y: -142px; --particle-delay: .02s; }
+.era-reveal__particle--two { --particle-x: 186px; --particle-y: -92px; --particle-near-x: 153px; --particle-near-y: -76px; --particle-out-x: 256px; --particle-out-y: -156px; --particle-delay: .14s; }
+.era-reveal__particle--three { --particle-x: -174px; --particle-y: 102px; --particle-near-x: -143px; --particle-near-y: 84px; --particle-out-x: -248px; --particle-out-y: 154px; --particle-delay: .26s; }
+.era-reveal__particle--four { --particle-x: 197px; --particle-y: 98px; --particle-near-x: 162px; --particle-near-y: 81px; --particle-out-x: 269px; --particle-out-y: 147px; --particle-delay: .38s; }
+.era-reveal__particle--five { --particle-x: 0px; --particle-y: -132px; --particle-near-x: 0px; --particle-near-y: -109px; --particle-out-x: 34px; --particle-out-y: -205px; --particle-delay: .5s; }
+.era-reveal__particle--six { --particle-x: 0px; --particle-y: 131px; --particle-near-x: 0px; --particle-near-y: 108px; --particle-out-x: -26px; --particle-out-y: 206px; --particle-delay: .62s; }
 .era-reveal__glint {
     position: absolute;
     top: 8%;
@@ -489,7 +518,7 @@
 .era-reveal__caption--right { right: 7%; }
 @media (max-width: 1100px) {
     .era-reveal { left: 61%; width: clamp(260px, 30vw, 360px); opacity: .72; }
-    .era-reveal__word { font-size: clamp(76px, 10vw, 120px); }
+    .era-reveal__word { width: clamp(250px, 35vw, 390px); }
     .era-reveal__shard--one { --sx: -130px; --sx-out: -169px; }
     .era-reveal__shard--two { --sx: 130px; --sx-out: 169px; }
     .era-reveal__shard--three { --sx: -118px; --sx-out: -153px; }
@@ -497,13 +526,13 @@
 }
 @media (max-width: 760px) {
     .era-reveal { top: 51%; left: 57%; width: 250px; opacity: .38; }
-    .era-reveal__word { font-size: 82px; }
+    .era-reveal__word { width: 270px; }
     .era-reveal__caption { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
     .era-reveal::before,
     .era-reveal__core,
-    .era-reveal__letter,
+    .era-reveal__svg-letter,
     .era-reveal__subtitle,
     .era-reveal__tagline,
     .era-reveal__orbit,
@@ -514,10 +543,11 @@
         animation: none !important;
     }
     .era-reveal__core { opacity: .66; }
-    .era-reveal__letter { opacity: 1; transform: none; filter: none; }
+    .era-reveal__svg-letter { opacity: 1; transform: none; filter: none; }
     .era-reveal__orbit--outer,
     .era-reveal__orbit--inner { opacity: .35; transform: translate(-50%, -50%) rotateX(62deg); }
     .era-reveal__shard,
+    .era-reveal__particle,
     .era-reveal__axis,
     .era-reveal__glint { display: none; }
 }

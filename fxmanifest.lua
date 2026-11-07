@@ -4,7 +4,7 @@ game 'gta5'
 name 'era_pvp_loading'
 author '64r3al'
 description 'Cinematic, configurable ERA PVP FiveM loading screen.'
-version '0.2.0'
+version '0.4.0'
 
 loadscreen 'html/index.html'
 loadscreen_cursor 'yes'

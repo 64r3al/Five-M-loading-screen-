@@ -2,14 +2,14 @@
 
 A custom, dark-blue cinematic loading screen for the ERA PVP FiveM server. The first implementation is deliberately dependency-free: HTML, CSS, vanilla JavaScript and a small server-side Lua handover script.
 
-> **Current release:** 0.2.0 — motion-graphics visual pass with layered HUD treatment, animated orbital linework, cinematic light sweeps and a restrained interference accent. Real ERA founder names/photos, the final soundtrack and Discord invite remain configurable because they have not yet been supplied or approved.
+> **Current release:** 0.4.0 — an upgraded vector-built ERA centerpiece with beveled SVG depth, independent 3D letter assembly, orbital energy rings, particle breakup and a cinematic reveal / hold / fracture loop. Real ERA founder names/photos, the final soundtrack and Discord invite remain configurable because they have not yet been supplied or approved.
 
 ## Features
 
 - ERA-branded, dark navy / electric-blue PVP interface.
 - Original vector city-at-night backdrop with an independent animated motion-graphics overlay.
 - Orbital HUD linework, diagonal light beams, a slow blue-white flash sweep and rare low-intensity signal interference.
-- A central 3D-styled ERA / PVP logo loop: letters assemble from separated fragments, hold with metallic depth and orbiting rings, then scatter and fade before repeating.
+- A custom vector-built ERA emblem with beveled metallic faces, layered extrusion, individual 3D letter assembly, orbiting rings, energy particles and a reveal / hold / fracture loop.
 - Connecting player's name from FiveM handover data.
 - Real FiveM loadProgress event handling (0–100%; no fabricated live progress).
 - Founder/staff cards configured in one file, with safe text rendering and avatar fallbacks.
@@ -72,4 +72,4 @@ Open http://localhost:8080/html/. The page identifies itself as LOCAL DESIGN PRE
 
 ## Release status
 
-This is a first functional implementation, not a claim of final production sign-off. A real FiveM client/server test is required before live deployment. The custom 3D cinematic, owner/founder information, portrait assets, final music and community links remain content-integration items.
+This is a developing implementation, not a claim of final production sign-off. A real FiveM client/server test is required before live deployment. The custom 3D cinematic, owner/founder information, portrait assets, final music and community links remain content-integration items.

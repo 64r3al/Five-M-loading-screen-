@@ -34,7 +34,7 @@
             <div class="scene__crosshair scene__crosshair--one"></div>
             <div class="scene__crosshair scene__crosshair--two"></div>
 
-            <!-- Decorative centerpiece: pure HTML/CSS 3D-style ERA reveal loop. -->
+            <!-- Original vector-built ERA centerpiece: beveled 3D letters forge together, hold, then break apart. -->
             <div class="era-reveal" aria-hidden="true">
                 <div class="era-reveal__orbit era-reveal__orbit--outer">
                     <span class="era-reveal__orbit-tick era-reveal__orbit-tick--top"></span>
@@ -48,13 +48,51 @@
                 <span class="era-reveal__shard era-reveal__shard--two"></span>
                 <span class="era-reveal__shard era-reveal__shard--three"></span>
                 <span class="era-reveal__shard era-reveal__shard--four"></span>
+                <i class="era-reveal__particle era-reveal__particle--one"></i>
+                <i class="era-reveal__particle era-reveal__particle--two"></i>
+                <i class="era-reveal__particle era-reveal__particle--three"></i>
+                <i class="era-reveal__particle era-reveal__particle--four"></i>
+                <i class="era-reveal__particle era-reveal__particle--five"></i>
+                <i class="era-reveal__particle era-reveal__particle--six"></i>
 
                 <div class="era-reveal__core">
-                    <div class="era-reveal__word" data-label="ERA">
-                        <span class="era-reveal__letter era-reveal__letter--e">E</span>
-                        <span class="era-reveal__letter era-reveal__letter--r">R</span>
-                        <span class="era-reveal__letter era-reveal__letter--a">A</span>
-                    </div>
+                    <svg class="era-reveal__word" viewBox="0 0 660 224" role="presentation" focusable="false">
+                        <defs>
+                            <linearGradient id="era-metal-face" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0" stop-color="#ffffff"/>
+                                <stop offset=".22" stop-color="#e6f3ff"/>
+                                <stop offset=".52" stop-color="#9ec8f0"/>
+                                <stop offset=".78" stop-color="#d9efff"/>
+                                <stop offset="1" stop-color="#6f9dca"/>
+                            </linearGradient>
+                            <linearGradient id="era-metal-depth" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#347fc2"/>
+                                <stop offset=".45" stop-color="#123d70"/>
+                                <stop offset="1" stop-color="#06172b"/>
+                            </linearGradient>
+                        </defs>
+
+                        <g class="era-reveal__svg-letter era-reveal__svg-letter--e">
+                            <path class="era-reveal__extrusion" d="M24 24H177V63H70V92H159V131H70V161H177V200H24Z" transform="translate(0 17)"/>
+                            <path class="era-reveal__extrusion" d="M24 24H177V63H70V92H159V131H70V161H177V200H24Z" transform="translate(0 10)"/>
+                            <path class="era-reveal__face" d="M24 24H177V63H70V92H159V131H70V161H177V200H24Z"/>
+                            <path class="era-reveal__highlight" d="M29 29H171M75 97H153"/>
+                        </g>
+
+                        <g class="era-reveal__svg-letter era-reveal__svg-letter--r">
+                            <path class="era-reveal__extrusion" fill-rule="evenodd" d="M226 24H342C399 24 426 52 426 94C426 124 409 146 380 157L432 200H373L329 164H274V200H226ZM274 64V124H338C363 124 376 114 376 94C376 74 363 64 338 64Z" transform="translate(0 17)"/>
+                            <path class="era-reveal__extrusion" fill-rule="evenodd" d="M226 24H342C399 24 426 52 426 94C426 124 409 146 380 157L432 200H373L329 164H274V200H226ZM274 64V124H338C363 124 376 114 376 94C376 74 363 64 338 64Z" transform="translate(0 10)"/>
+                            <path class="era-reveal__face" fill-rule="evenodd" d="M226 24H342C399 24 426 52 426 94C426 124 409 146 380 157L432 200H373L329 164H274V200H226ZM274 64V124H338C363 124 376 114 376 94C376 74 363 64 338 64Z"/>
+                            <path class="era-reveal__highlight" d="M232 29H342C387 29 420 49 420 91"/>
+                        </g>
+
+                        <g class="era-reveal__svg-letter era-reveal__svg-letter--a">
+                            <path class="era-reveal__extrusion" fill-rule="evenodd" d="M451 200L514 24H571L636 200H585L573 163H510L498 200ZM521 125H562L541 65Z" transform="translate(0 17)"/>
+                            <path class="era-reveal__extrusion" fill-rule="evenodd" d="M451 200L514 24H571L636 200H585L573 163H510L498 200ZM521 125H562L541 65Z" transform="translate(0 10)"/>
+                            <path class="era-reveal__face" fill-rule="evenodd" d="M451 200L514 24H571L636 200H585L573 163H510L498 200ZM521 125H562L541 65Z"/>
+                            <path class="era-reveal__highlight" d="M459 194L518 29H567L625 194"/>
+                        </g>
+                    </svg>
                     <div class="era-reveal__subtitle">P V P</div>
                     <div class="era-reveal__tagline"><span></span> ENTER THE ARENA <span></span></div>
                 </div>

@@ -24,3 +24,12 @@
 - Logo reveal assembles from separated shards, holds with a metallic light pass, then unravels and fades in a continuous 9.6-second loop.
 - Kept the centerpiece decorative and behind the loading interface so it cannot intercept the mouse or obscure the actual progress controls.
 - Added responsive sizing and a static, readable reduced-motion fallback.
+
+
+## 0.4.0 — Vector forge centerpiece
+
+- Rebuilt the central ERA mark as custom SVG geometry with metallic faces, bevel highlights and two layers of visible extrusion.
+- Reworked the logo motion into a 10.8-second cinematic forge sequence: letters enter on separate 3D axes, lock into the emblem, hold under a moving light pass, then fracture and scatter.
+- Added restrained energy particles and refined the orbital ring choreography.
+- Kept the animation self-contained, dependency-free, non-interactive and compatible with the existing FiveM loading-screen structure.
+- Added a static high-contrast fallback for reduced-motion settings and synchronized the resource manifest version.
