@@ -345,7 +345,7 @@
                 break;
             case 'onLogLine':
                 if (typeof data.message === 'string' && data.message.trim()) {
-                    const line = data.message.replace(/\\s+/g, ' ').trim().slice(0, 72);
+                    const line = data.message.replace(/\s+/g, ' ').trim().slice(0, 72);
                     setStage(line.toUpperCase(), 'FIVE M CONNECTION UPDATE');
                 }
                 break;
